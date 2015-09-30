@@ -6,7 +6,7 @@ This simple API built using grape on top of Rack generates random words
 
 ```
 bundle install
-``
+```
 
 ### Run app
 
