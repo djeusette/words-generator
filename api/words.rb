@@ -12,7 +12,7 @@ module WordsGenerator
             Forgery('name').female_first_name,
             Forgery('name').industry
           ]
-          {words: words.sample(rand(words.length + 1))}
+          {words: words.sample(rand(words.length + 1)).join(' ')}
         end
       end
     end
