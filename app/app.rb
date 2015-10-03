@@ -12,13 +12,13 @@ module WordsGenerator
             end
           end
 
-          run WordsGenerator::App.new
+          run App.new
         end.to_app
       end
     end
 
     def call(env)
-      WordsGenerator::Api.call(env)
+      Api::Base.call(env)
     end
   end
 end

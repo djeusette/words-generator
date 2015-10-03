@@ -1,5 +1,5 @@
 module WordsGenerator
-  module API
+  module Api
     class Words < Grape::API
       format  :json
 
