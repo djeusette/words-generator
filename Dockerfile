@@ -2,7 +2,7 @@ FROM ruby:2.2.3-slim
 
 ENV HOME /home/rails/webapp
 
-# Install PGsql dependencies and js engine
+# Install dependencies
 RUN apt-get -y update && apt-get install -y build-essential
 
 WORKDIR $HOME
