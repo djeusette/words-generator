@@ -1,4 +1,4 @@
-FROM ruby:2.2.3
+FROM ruby:2.2.3-slim
 
 ENV HOME /home/rails/webapp
 
@@ -8,7 +8,7 @@ RUN apt-get -y update && apt-get install -y build-essential
 WORKDIR $HOME
 
 # Install gems
-# Doing this before adding the code allows to benefits from the cache system
+# Doing this before adding the code allows to benefit from the cache system
 ADD Gemfile* $HOME/
 RUN bundle install
 
