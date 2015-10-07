@@ -4,4 +4,8 @@ gem 'rack'
 gem 'rack-cors'
 gem 'grape'
 gem 'forgery'
-gem 'airborne', '~> 0.1.20'
+
+group :test do
+  gem 'airborne', '~> 0.1.20'
+  gem 'test-unit'
+end
