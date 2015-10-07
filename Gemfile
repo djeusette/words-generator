@@ -7,5 +7,4 @@ gem 'forgery'
 
 group :test do
   gem 'airborne', '~> 0.1.20'
-  gem 'test-unit'
 end
