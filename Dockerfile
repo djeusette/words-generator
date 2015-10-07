@@ -17,5 +17,7 @@ ADD . $HOME
 
 EXPOSE 9292
 
+ENTRYPOINT ["bundle", "exec"]
+
 # Default command
 CMD ["rackup", "config.ru", "--host", "0.0.0.0", "-p", "9292"]
