@@ -9,5 +9,5 @@ Dir[File.expand_path('../../api/*.rb', __FILE__)].each do |file|
 end
 
 Dir[File.expand_path('../../**/*.rb', __FILE__)].each do |file|
-  require file
+  require file unless File.dirname(file).match(/spec/)
 end
