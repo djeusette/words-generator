@@ -1,3 +1,5 @@
+require_relative './words'
+
 module WordsGenerator
   module Api
     class Base < Grape::API
