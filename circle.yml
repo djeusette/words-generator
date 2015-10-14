@@ -1,7 +1,20 @@
 machine:
   ruby:
     version: 2.2.3
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t djeusette/words-generator:$CIRCLE_SHA1 .
 
 test:
   override:
-    - bundle exec rspec spec --format doc
+    - docker run djeusette/words-generator:$CIRCLE_SHA1 bundle exec rspec spec --format doc
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push djeusette/words-generator:$CIRCLE_SHA1
