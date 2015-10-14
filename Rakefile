@@ -17,7 +17,7 @@ end
 
 desc "Print out routes"
 task routes: :environment do
-  WordsGenerator::Api.routes.each do |route|
+  WordsGenerator::Api::Base.routes.each do |route|
     info = route.instance_variable_get :@options
     description = "%-40s..." % info[:description][0..39] if info[:description]
     method = "%-7s" % info[:method]

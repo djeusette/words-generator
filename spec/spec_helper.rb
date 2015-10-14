@@ -1,5 +1,9 @@
-require 'airborne'
+require 'grape'
+require 'json'
+require 'rack/test'
+require File.expand_path('../../config/environment', __FILE__)
 
-Airborne.configure do |config|
-  config.rack_app = Rack::Builder.parse_file(File.expand_path('../../config.ru', __FILE__)).first
+RSpec.configure do |config|
+  config.include Rack::Test::Methods
+  config.raise_errors_for_deprecations!
 end
