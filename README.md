@@ -14,3 +14,4 @@ bundle install
 rackup config.ru [-p port]
 ```
 
+This app is intended to run in a Docker container as well as the test suite.
