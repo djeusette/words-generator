@@ -5,6 +5,8 @@ machine:
     - docker
 
 dependencies:
+  pre:
+    - pip install awscli
   override:
     - docker build -t djeusette/words-generator:$CIRCLE_SHA1 .
 
@@ -16,6 +18,6 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker tag djeusette/words-generator:$CIRCLE_SHA1 djeusette/words-generator:latest
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push djeusette/words-generator:latest
+      - docker push djeusette/words-generator:$CIRCLE_SHA1
+      - ./ecs-deploy -c dummy-blog-cluster -n words-generator-service -i djeusette/words-generator:$CIRCLE_SHA1
