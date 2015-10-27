@@ -20,4 +20,4 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push djeusette/words-generator:$CIRCLE_SHA1
-      - ./ecs_deploy.sh -c dummy-blog-cluster -n words-generator-service -i djeusette/words-generator:$CIRCLE_SHA1 -t 180
+      - ./ecs_deploy.sh -c dummy-blog-cluster -n words-generator-service -i djeusette/words-generator:$CIRCLE_SHA1 -t 240
